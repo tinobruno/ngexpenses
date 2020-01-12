@@ -1,6 +1,13 @@
 <div class="container-fluid">
 <hello name="{{ name }}"></hello>
 <h1>Expense Management</h1>
+
+    <input type="file" (change)="uploadFile($event)" />
+    <div>{{ uploadPercent | async }}</div>
+    <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
+
+    <br/>
+
 <expenserow></expenserow>
 <ng-template  ngFor let-item [ngForOf]="expenserows" let-i="index" >
 <expenserow [value]='item'></expenserow>
