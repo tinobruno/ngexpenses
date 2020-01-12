@@ -1,0 +1,16 @@
+<div *ngIf="value==null" class="row header">
+<div class="col-2"> Date</div>
+<div class="col-3"> Seller</div>
+<div class="col-2"> Amount</div>
+<div class="col-2"> Vat</div>
+<div class="col-1"> Vat%</div>
+<div class="col-2"> Attach</div>
+</div>
+<div *ngIf="value!=null" class="row">
+<div class="col-2"> {{value.date}}</div>
+<div class="col-3"> {{value.seller}}</div>
+<div class="col-2"> {{value.amount}}</div>
+<div class="col-2"> {{value.vatamount}}</div>
+<div class="col-1"> {{value.vat}}%</div>
+<div class="col-2"></div>
+</div>
