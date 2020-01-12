@@ -16,4 +16,6 @@ export class ExpenseRow  {
   constructor( @Optional() seller:string){
     this.seller=seller;
   }
+
+
 }

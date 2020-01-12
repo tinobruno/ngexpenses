@@ -9,8 +9,12 @@
     <br/>
 
 <expenserow></expenserow>
-<ng-template  ngFor let-item [ngForOf]="expenserows" let-i="index" >
-<expenserow [value]='item'></expenserow>
+<ng-template  ngFor let-item [ngForOf]="dbexpenserows | async" let-i="index" >
+<expenserow [value]='item'></expenserow> <button (click)="deleteItem(item.key)">Delete</button>
 </ng-template>
+
+    <expenserow #newitem [value]="{}"></expenserow>
+    <button (click)="addItem(newitem.value)">Add</button>
+    <button (click)="deleteEverything()">Delete All</button>
 
 </div>
