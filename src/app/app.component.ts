@@ -40,7 +40,7 @@ export class AppComponent {
 
   uploadFile(event) {
     const file = event.target.files[0];
-    const filePath = '/upl/';
+    const filePath = '/upl/'+event.srcElement.files[0].name;
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, file);
 

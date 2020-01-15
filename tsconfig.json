@@ -1,7 +1,9 @@
 {
   "compilerOptions":
   {
-    "experimentalDecorators": true
+    "target" : "es2016",
+    "experimentalDecorators": true,
+    "lib": [ "es2016"]
   },
-  "exclude": [ "src/index.html" ]
+  "_exclude": [ "src/index.html" ]
 }
