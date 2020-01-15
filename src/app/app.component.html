@@ -1,28 +1,42 @@
 <div class="container-fluid">
-<hello name="{{ name }}"></hello>
-<h1>Expense Management</h1>
+    <hello name="{{ name }}"></hello>
+    <h1>Expense Management</h1>
 
     <input type="file" (change)="uploadFile($event)" />
     <div>{{ uploadPercent | async }}</div>
     <a [href]="downloadURL | async">{{ downloadURL | async }}</a>
 
     <br/>
-
-<expenserow></expenserow>
-<ng-template  ngFor let-item [ngForOf]="dbexpenserows | async" let-i="index" >
     <div class="row">
         <div class="col-11">
-            <expenserow [value]='item'></expenserow>
+            <expenserow></expenserow>
         </div>
         <div class="col-1">
-            <button (click)="deleteItem(item.key)">Delete</button>
+            Action
+        </div>
+    </div>
+    <ng-template  ngFor let-item [ngForOf]="dbexpenserows | async" let-i="index" >
+        <div class="row">
+            <div class="col-11">
+                <expenserow [value]='item'></expenserow>
+            </div>
+            <div class="col-1">
+                <button (click)="updateItem(item.key,item)">Save</button>
+                <button (click)="deleteItem(item.key)">Delete</button>
+            </div>
+        </div>
+
+    </ng-template>
+    <div class="row">
+        <div class="col-11">
+            <expenserow #newitem [value]="{}"></expenserow>
+        </div>
+        <div class="col-1">
+            <button (click)="addItem(newitem.value)">Add</button>
         </div>
     </div>
 
-</ng-template>
 
-    <expenserow #newitem [value]="{}"></expenserow>
-    <button (click)="addItem(newitem.value)">Add</button>
     <button (click)="deleteEverything()">Delete All</button>
 
 </div>

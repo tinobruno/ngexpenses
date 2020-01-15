@@ -20,7 +20,7 @@ export class AppComponent {
     this.dbexpenserowsRef = db.list('expenses');
     this.dbexpenserows = this.dbexpenserowsRef.snapshotChanges().pipe(
         map(changes =>
-            changes.map(c => ({ key: Object.keys(c.payload.val())[0] , ...c.payload.val() }))
+            changes.map(c => ({ key: c.payload.key  , ...c.payload.val() }))
         )
     );
   }

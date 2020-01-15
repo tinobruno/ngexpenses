@@ -9,10 +9,12 @@ import { HelloComponent } from './hello.component';
 import { ExpenseRow } from './components/expenserow'
 import {environment} from "../environments/environment";
 import {AngularFireDatabaseModule} from "@angular/fire/database";
+import { MatSliderModule } from '@angular/material/slider';
+
 @NgModule({
   imports:      [ BrowserModule, FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireStorageModule,AngularFireDatabaseModule],
+    AngularFireStorageModule,AngularFireDatabaseModule,MatSliderModule,],
   declarations: [ AppComponent, HelloComponent, ExpenseRow ],
   bootstrap:    [ AppComponent ]
 })
