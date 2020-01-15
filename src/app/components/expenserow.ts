@@ -1,4 +1,3 @@
-
 import { Component,Optional,Input } from '@angular/core';
 @Component({
   selector: 'expenserow',
@@ -6,16 +5,16 @@ import { Component,Optional,Input } from '@angular/core';
   styleUrls: [ './expenserow.css' ]
 })
 export class ExpenseRow  {
+
   @Input() value:ExpenseRow;
   public date: Date;
   public seller:string;
   public amount:number;
   public vatamount:number;
   public vat:number;
-  public attachment:string;
-  constructor( @Optional() seller:string){
-    this.seller=seller;
-  }
 
+  public attachment:string;
+  constructor(){
+  }
 
 }

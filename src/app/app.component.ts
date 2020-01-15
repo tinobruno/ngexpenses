@@ -17,7 +17,6 @@ export class AppComponent {
   uploadPercent: Observable<number>;
   downloadURL: Observable<string>;
   constructor(private storage: AngularFireStorage, private db: AngularFireDatabase) {
-    this.expenserows = [new ExpenseRow("MMM"), new ExpenseRow("VVV")];
     this.dbexpenserowsRef = db.list('expenses');
     this.dbexpenserows = this.dbexpenserowsRef.snapshotChanges().pipe(
         map(changes =>

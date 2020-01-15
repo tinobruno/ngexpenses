@@ -10,7 +10,15 @@
 
 <expenserow></expenserow>
 <ng-template  ngFor let-item [ngForOf]="dbexpenserows | async" let-i="index" >
-<expenserow [value]='item'></expenserow> <button (click)="deleteItem(item.key)">Delete</button>
+    <div class="row">
+        <div class="col-11">
+            <expenserow [value]='item'></expenserow>
+        </div>
+        <div class="col-1">
+            <button (click)="deleteItem(item.key)">Delete</button>
+        </div>
+    </div>
+
 </ng-template>
 
     <expenserow #newitem [value]="{}"></expenserow>

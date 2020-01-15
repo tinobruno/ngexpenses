@@ -10,7 +10,8 @@ import { ExpenseRow } from './components/expenserow'
 import {environment} from "../environments/environment";
 import {AngularFireDatabaseModule} from "@angular/fire/database";
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, AngularFireModule.initializeApp(environment.firebase),
+  imports:      [ BrowserModule, FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,AngularFireDatabaseModule],
   declarations: [ AppComponent, HelloComponent, ExpenseRow ],
   bootstrap:    [ AppComponent ]
